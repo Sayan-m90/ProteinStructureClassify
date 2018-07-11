@@ -1,9 +1,8 @@
 //
 //  main.cpp
-//  BitTests
 //
-//  Created by Bill Varcho on 2/24/16.
-//  Copyright © 2016 Bill Varcho. All rights reserved.
+//  Created by Sayan Mandal
+//  Copyright © 2017 Sayan Mandal. All rights reserved.
 //
 /*
 */
@@ -150,7 +149,7 @@ int main(int argc,  char * argv[])
     ifstream f(input_points_file.c_str());
     if( f.good()==false)
     {
-        cout<<"File does not exist.";
+        cout<<"File does not exist. Use -h for options";
         return 0;
     }
     vector<string> strs;

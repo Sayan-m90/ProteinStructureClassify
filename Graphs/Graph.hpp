@@ -2,8 +2,8 @@
 //  Graph.hpp
 //  RandomHomology
 //
-//  Created by Bill Varcho on 4/8/16.
-//  Copyright © 2016 Bill Varcho. All rights reserved.
+//  Created by Sayan Mandal on 4/8/16.
+//  Copyright © 2016 Sayan Mandal. All rights reserved.
 //
 
 #ifndef Graph_hpp

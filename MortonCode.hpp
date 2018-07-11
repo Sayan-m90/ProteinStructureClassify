@@ -2,8 +2,8 @@
 //  MortonCode.hpp
 //  BitTests
 //
-//  Created by Bill Varcho on 2/24/16.
-//  Copyright © 2016 Bill Varcho. All rights reserved.
+//  Created by Sayan Mandal on 2/24/16.
+//  Copyright © 2016 Sayan Mandal. All rights reserved.
 //
 
 #ifndef MortonCode_hpp

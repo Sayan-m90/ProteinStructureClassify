@@ -2,8 +2,8 @@
 //  GICWrapper.hpp
 //  RandomHomology
 //
-//  Created by Bill Varcho on 3/10/16.
-//  Copyright © 2016 Bill Varcho. All rights reserved.
+//  Created by Sayan Mandal on 3/10/16.
+//  Copyright © 2016 Sayan Mandal. All rights reserved.
 //
 
 #ifndef GICWrapper_hpp
