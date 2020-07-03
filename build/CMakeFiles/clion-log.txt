@@ -1,0 +1,36 @@
+/Applications/CMake.app/Contents/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/soham/ProtienStructureClassify
+-- Install ANN includes: /Users/soham/ProtienStructureClassify/build/INSTALL/lib/libANN.a
+-- Found Boost: /usr/local/lib/cmake/Boost-1.72.0/BoostConfig.cmake (found suitable version "1.72.0", minimum required is "1.40") found components:  regex date_time system filesystem thread graph program_options 
+-- Using header-only CGAL
+-- Targetting Unix Makefiles
+-- Using /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ compiler.
+-- DARWIN_VERSION=19
+-- Mac Leopard detected
+-- Found Boost: /usr/local/lib/cmake/Boost-1.72.0/BoostConfig.cmake (found suitable version "1.72.0", minimum required is "1.48")  
+-- Boost include dirs: /usr/local/include
+-- Boost libraries:    
+-- Build type: Debug
+-- USING CXXFLAGS = ' -g'
+-- USING EXEFLAGS = ' '
+-- Requested component: MPFR
+-- Requested component: GMP
+
+CMake Warning at /usr/local/lib/cmake/CGAL/CGAL_enable_end_of_configuration_hook.cmake:99 (message):
+  =======================================================================
+
+  CGAL performance notice:
+
+  The variable CMAKE_BUILD_TYPE is set to "Debug".  For performance reasons,
+  you should set CMAKE_BUILD_TYPE to "Release".
+
+  Set CGAL_DO_NOT_WARN_ABOUT_CMAKE_BUILD_TYPE to TRUE if you want to disable
+  this warning.
+
+  =======================================================================
+Call Stack (most recent call first):
+  CMakeLists.txt:9999 (CGAL_run_at_the_end_of_configuration)
+
+
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/soham/ProtienStructureClassify/build

@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/Users/soham/ProtienStructureClassify/build/CMakeFiles/project_ANN"
+		},
+		{
+			"file" : "/Users/soham/ProtienStructureClassify/build/CMakeFiles/project_ANN.rule"
+		},
+		{
+			"file" : "/Users/soham/ProtienStructureClassify/build/CMakeFiles/project_ANN-complete.rule"
+		},
+		{
+			"file" : "/Users/soham/ProtienStructureClassify/build/project_ANN-prefix/src/project_ANN-stamp/project_ANN-install.rule"
+		},
+		{
+			"file" : "/Users/soham/ProtienStructureClassify/build/project_ANN-prefix/src/project_ANN-stamp/project_ANN-mkdir.rule"
+		},
+		{
+			"file" : "/Users/soham/ProtienStructureClassify/build/project_ANN-prefix/src/project_ANN-stamp/project_ANN-download.rule"
+		},
+		{
+			"file" : "/Users/soham/ProtienStructureClassify/build/project_ANN-prefix/src/project_ANN-stamp/project_ANN-update.rule"
+		},
+		{
+			"file" : "/Users/soham/ProtienStructureClassify/build/project_ANN-prefix/src/project_ANN-stamp/project_ANN-patch.rule"
+		},
+		{
+			"file" : "/Users/soham/ProtienStructureClassify/build/project_ANN-prefix/src/project_ANN-stamp/project_ANN-configure.rule"
+		},
+		{
+			"file" : "/Users/soham/ProtienStructureClassify/build/project_ANN-prefix/src/project_ANN-stamp/project_ANN-build.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"project_ANN"
+		],
+		"name" : "project_ANN"
+	}
+}
