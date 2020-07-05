@@ -1,0 +1,13 @@
+# Target labels
+ project_ANN
+# Source files and their labels
+/Users/soham/ProtienStructureClassify/build/CMakeFiles/project_ANN
+/Users/soham/ProtienStructureClassify/build/CMakeFiles/project_ANN.rule
+/Users/soham/ProtienStructureClassify/build/CMakeFiles/project_ANN-complete.rule
+/Users/soham/ProtienStructureClassify/build/project_ANN-prefix/src/project_ANN-stamp/project_ANN-install.rule
+/Users/soham/ProtienStructureClassify/build/project_ANN-prefix/src/project_ANN-stamp/project_ANN-mkdir.rule
+/Users/soham/ProtienStructureClassify/build/project_ANN-prefix/src/project_ANN-stamp/project_ANN-download.rule
+/Users/soham/ProtienStructureClassify/build/project_ANN-prefix/src/project_ANN-stamp/project_ANN-update.rule
+/Users/soham/ProtienStructureClassify/build/project_ANN-prefix/src/project_ANN-stamp/project_ANN-patch.rule
+/Users/soham/ProtienStructureClassify/build/project_ANN-prefix/src/project_ANN-stamp/project_ANN-configure.rule
+/Users/soham/ProtienStructureClassify/build/project_ANN-prefix/src/project_ANN-stamp/project_ANN-build.rule

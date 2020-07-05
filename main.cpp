@@ -16,7 +16,7 @@
 #include "RandomHomology.hpp"
 #include "Wrappers/SimPersWrapper.hpp"
 #include "Utilities.hpp"
-#include <time.h>
+#include <ctime>
 #include <iostream>
 #include <vector>
 #include <boost/filesystem/operations.hpp>
@@ -24,6 +24,7 @@
 #include <boost/filesystem.hpp>
 #include <boost/thread.hpp>
 #include <string>
+#include <boost/program_options.hpp>
 #include <cstdio>
 
 using std::cout;

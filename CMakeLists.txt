@@ -1,47 +1,69 @@
+cmake_minimum_required(VERSION 3.1)
+set (CMAKE_CXX_STANDARD 11)
+project(Protein_pers)
 
 
-#cmake_minimum_required( VERSION 2.8 FATAL_ERROR )
-#project( Persistence of Images )
-#cmake_policy( SET CMP0017 NEW )
-SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+set(DEP_LIBRARY_PATH ${CMAKE_BINARY_DIR}/INSTALL)
+file(MAKE_DIRECTORY ${DEP_LIBRARY_PATH})
+file(MAKE_DIRECTORY ${DEP_LIBRARY_PATH}/lib)
 
-#file(GLOB ANN RELATIVE "ANN" "*.h")
-#file(GLOB GIComplex RELATIVE "GIComplex" "*.cpp" "*.h")
-#file(GLOB Graphs RELATIVE "Graphs" "*.cpp" "*.hpp")
-#file(GLOB SimPers RELATIVE "SimPers" "*.cpp" "*.h")
-#file(GLOB Wrappers RELATIVE "Wrappers" "*.cpp" "*.hpp")
+include(ExternalProject)
 
-#file(GLOB Wrappersh RELATIVE "Wrappers" "*.hpp")
-#file(GLOB GIComplexh RELATIVE "GIComplex" "*.h")
-#file(GLOB SimPersh RELATIVE "SimPers" "*.h")
-#file(GLOB Graphsh RELATIVE "Graphs" "*.hpp")
+set (ANN_BUILD_CMD)
+set (ANN_INSTALL_CMD)
+if ( APPLE )
+	set ( ANN_BUILD_CMD make macosx-g++ )
+	set ( ANN_INSTALL_CMD cp lib/libANN.a ${DEP_LIBRARY_PATH}/lib/libANN.a && cp -rf include ${DEP_LIBRARY_PATH}/include )
+endif()
+if ( UNIX )
+	set ( ANN_BUILD_CMD make linux-g++ )
+endif()
+if ( WIN32 )
+	set ( ANN_BUILD_CMD make macosx-g++ )
+endif()
 
-#include_directories( ${CMAKE_SOURCE_DIR}/src "${CMAKE_SOURCE_DIR}/GIComplex" "${CMAKE_SOURCE_DIR}/ANN" "${CMAKE_SOURCE_DIR}/Graphs" "${CMAKE_SOURCE_DIR}/SimPers" "${CMAKE_SOURCE_DIR}/Wrappes")
-link_directories(${CMAKE_SOURCE_DIR}/lib)
+ExternalProject_Add(project_ANN
+		GIT_REPOSITORY "https://github.com/lixun910/ann.git"
+		GIT_TAG "master"
+		BUILD_IN_SOURCE 1
+		UPDATE_COMMAND ""
+		PATCH_COMMAND ""
+		CONFIGURE_COMMAND ""
+		BUILD_COMMAND make macosx-g++
+		INSTALL_COMMAND ${ANN_INSTALL_CMD}
+		INSTALL_DIR ${CMAKE_BINARY_DIR}/INSTALL
+		)
 
-include_directories( ${CMAKE_SOURCE_DIR}/src "${CMAKE_SOURCE_DIR}/src/include" )
-link_directories(${CMAKE_SOURCE_DIR}/src/lib)
+
+ExternalProject_Get_Property(project_ANN install_dir)
+
+message(STATUS "Install ANN includes: ${install_dir}/lib/libANN.a")
+
+
+add_library(ANN STATIC IMPORTED)
+
+set_property(TARGET ANN PROPERTY IMPORTED_LOCATION ${install_dir}/lib/libANN.a)
+
+
+add_dependencies(ANN project_ANN)
+
 # Boost
-#set(Boost_INCLUDE_DIR /usr/include/boost)
-find_package( Boost 1.5 COMPONENTS filesystem program_options system REQUIRED )
-include_directories( ${Boost_INCLUDE_DIRS} )
-link_directories(${Boost_LIBRARY_DIRS})
+find_package(Boost 1.40 COMPONENTS regex date_time system filesystem thread graph program_options REQUIRED)
+include_directories( ${Boost_INCLUDE_DIR} )
+#
+#message("boost lib: ${Boost_LIBRARIES}")
+#message("boost inc:${Boost_INCLUDE_DIR}")
+
+#CGAL
+find_package(CGAL)
+include( ${CGAL_USE_FILE} )
 
 #OpenCV
-set(CGAL_INCLUDE_DIR /usr/local/include)
-include_directories(${CGAL_INCLUDE_DIR})
-link_directories(${CGAL_INCLUDE_DIR})
-find_path(GMP_INCLUE_DIR gmp.h)
-find_package(GMP REQUIRED)
 find_package(OpenCV REQUIRED COMPONENTS core imgproc highgui imgcodecs REQUIRED)
-#set(OpenCV_DIR "/usr/local/lib")
-#set(OpenCV_LIBS "/usr/local/lib")
-#highgui imgcodecs imgproc core)
-
-#COMPONENTS core imgproc highgui imgcodecs)
 include_directories(${OpenCV_INCLUDE_DIRS})
 
-include_directories( "." ".." ) 
+include_directories( "." ".." )
+
 
 add_executable( pers
 	Wrappers/GICWrapper.cpp
@@ -76,11 +98,6 @@ add_executable( pers
 	GIComplex/SimpleGraph.h
 	GIComplex/SimplexNodeGIC.h
 	GIComplex/SimplicialComplexGIC.h
-	#ANN
-	#GIComplex
-	#Graphs
-	#SimPers
-	#Wrappers
 	Collapse.hpp
 	Collapse.cpp
 	Constants.cpp
@@ -94,6 +111,7 @@ add_executable( pers
 	RandomHomology.hpp
 	Utilities.cpp
 	Utilities.hpp
-	) 
-#target_link_libraries( pers ann.lib )
-target_link_libraries( pers ${Boost_LIBRARIES} ${OpenCV_LIBS} ann.lib gmp libgmp CGAL.lib)
+	)
+
+message("${Boost_LIBRARIES}")
+target_link_libraries(pers  ${OpenCV_LIBS} ANN ${CGAL_LIBRARIES} Boost::program_options Boost::filesystem)

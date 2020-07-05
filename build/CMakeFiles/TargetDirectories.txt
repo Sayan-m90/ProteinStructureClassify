@@ -1,3 +1,4 @@
-/home/sayan/workspace/protein-collapse-alpha/build/CMakeFiles/rebuild_cache.dir
-/home/sayan/workspace/protein-collapse-alpha/build/CMakeFiles/edit_cache.dir
-/home/sayan/workspace/protein-collapse-alpha/build/CMakeFiles/pers.dir
+/Users/soham/ProtienStructureClassify/build/CMakeFiles/rebuild_cache.dir
+/Users/soham/ProtienStructureClassify/build/CMakeFiles/edit_cache.dir
+/Users/soham/ProtienStructureClassify/build/CMakeFiles/pers.dir
+/Users/soham/ProtienStructureClassify/build/CMakeFiles/project_ANN.dir
