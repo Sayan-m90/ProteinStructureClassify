@@ -23,7 +23,10 @@ Compile the software in Linux using the script file build.sh as provided. It's P
 2. CGAL(https://www.cgal.org/)
 3. ANN (http://www.cs.umd.edu/~mount/ANN/)
 For installation in Windows or Mac, install these two dependencies then compile as a project
-
+We have tested it on:
+Boost 1.72
+CGAL 5.00.2.100
+OpenCV 4.3.0
 =================================
 USAGE
 =================================
