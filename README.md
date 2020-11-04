@@ -22,6 +22,7 @@ Compile the software in Linux using the script file build.sh as provided. It's P
 1. Boost(https://www.boost.org/)
 2. CGAL(https://www.cgal.org/)
 3. ANN (http://www.cs.umd.edu/~mount/ANN/)
+4. OpenCV for C++ (LibOpencv of C++ needs to be installed, make sure it is not python OpenCV).
 For installation in Windows or Mac, install these two dependencies then compile as a project
 We have tested it on:
 Boost 1.72
@@ -169,3 +170,7 @@ below.  It can also be found at:
 
    http://www.gnu.org/copyleft/lesser.html
 ---------------------------------------------------------------------------
+
+*ACKNOWLEDGEMENT*
+------------------------------------------------------------------------------------
+The author would like to thank Soham Mukherjee, Phd Student, Purdue University for helping with subsequent maintainance and updates.
